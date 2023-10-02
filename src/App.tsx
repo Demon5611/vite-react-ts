@@ -1,37 +1,32 @@
+import { Box, Button } from '@mui/material';
 import React, { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import elbrusLogo from './assets/elbrus.svg';
-import './App.css';
+import Therd from './Therd';
+import First from './components/First';
+import Second from './components/Second';
 
 function App(): JSX.Element {
-  const [count, setCount] = useState(0);
+  const [selectComponent, setSelectComponent] = useState('rundom');
 
   return (
-    <div className="App">
+    <Box>
+      <Button variant="contained" color="primary" onClick={() => setSelectComponent('random')}>
+        random
+      </Button>
+      <Button variant="contained" color="primary" onClick={() => setSelectComponent('time')}>
+        time
+      </Button>
+      <Button variant="contained" color="primary" onClick={() => setSelectComponent('timer')}>
+        timer
+      </Button>
+
       <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://github.com/Elbrus-Bootcamp" target="_blank" rel="noreferrer">
-          <img src={elbrusLogo} className="logo elbrus" alt="Elbrus logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        {selectComponent === 'random' && <First />}
+        {selectComponent === 'time' && <Second />}
+        {selectComponent === 'timer' && <Therd />}
       </div>
-      <h2>Elbrus Bootcamp</h2>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button type="button" onClick={() => setCount((prev) => prev + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-    </div>
+    </Box>
   );
 }
 
 export default App;
+// задали три сценария поведения: если нажмешь random, то покажи стр First. если time то Second. если 'timer' && <Therd
