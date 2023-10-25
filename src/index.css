@@ -1,0 +1,68 @@
+/* #root{
+    width: 100%;
+    max-width: none;
+    background-color: rgb(200, 194, 187);
+} */
+*, ::after, ::before {
+    box-sizing: content-box;
+}
+
+/* main.jsx */
+.main-container{
+
+    background-color: rgb(225, 219, 213);
+}
+.nuvBar{
+    padding-bottom: 2ch;
+}
+/* main */
+.containerText{
+    font-style:italic;
+    font-size: larger;
+    text-align: justify;
+    text-indent: 4ch;
+
+
+.img2{
+    height: 26ch;
+    float: right;
+    padding: 2ch;
+}
+.img3{
+    height: 30ch;
+    float: left;
+    padding-left: 1ch;
+    padding-right: 2ch;
+}
+.cv{
+    float: right;
+    
+}
+}
+
+  /* ===========/* galary   */
+
+.containerTextGalary{
+    font-style:italic;
+    font-size: larger;
+    text-align: justify;
+    text-indent: 4ch; /* отступ*/
+}
+  
+  
+.cardContainer {
+    width: 70ch;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Можно настроить интервал между карточками по вашему выбору */
+  }
+  
+  /* Опционально: добавьте стили для карточек, если необходимо */
+  .card {
+    /* Ваши стили для карточек */
+  }
+
+
+
+
+  /* fluid */

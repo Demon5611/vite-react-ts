@@ -1,32 +1,25 @@
-import { Box, Button } from '@mui/material';
-import React, { useState } from 'react';
-import Therd from './Therd';
-import First from './components/First';
-import Second from './components/Second';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import ContactsPage from './components/pages/ContactsPage';
+import GaleryPage from './components/pages/GaleryPage';
+import MainPage from './components/pages/MainPage';
+import NavBar from './components/ui/NavBar';
 
 function App(): JSX.Element {
-  const [selectComponent, setSelectComponent] = useState('rundom');
-
   return (
-    <Box>
-      <Button variant="contained" color="primary" onClick={() => setSelectComponent('random')}>
-        random
-      </Button>
-      <Button variant="contained" color="primary" onClick={() => setSelectComponent('time')}>
-        time
-      </Button>
-      <Button variant="contained" color="primary" onClick={() => setSelectComponent('timer')}>
-        timer
-      </Button>
 
-      <div>
-        {selectComponent === 'random' && <First />}
-        {selectComponent === 'time' && <Second />}
-        {selectComponent === 'timer' && <Therd />}
-      </div>
-    </Box>
+    
+    <>
+      <NavBar  />
+      <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/gallery" element={<GaleryPage />} />
+      <Route path="/contacts" element={<ContactsPage />} />
+      </Routes>
+    </>
+      
+  
   );
 }
 
 export default App;
-// задали три сценария поведения: если нажмешь random, то покажи стр First. если time то Second. если 'timer' && <Therd
